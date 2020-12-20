@@ -3,7 +3,10 @@ const app = express()
 const PORT = 5000
 const path = require("path")
 
-app.use(express.static(path.join(__dirname, "client", "build")))
+
+app.get("/", (req, res) => {
+    app.use(express.static(path.join(__dirname, "client", "build")))
+})
 
 const port = process.env.port || 5000;
 
